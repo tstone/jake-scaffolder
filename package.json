@@ -1,0 +1,23 @@
+{
+    "name": "jake-scaffolder",
+    "version": "0.1.0",
+    "description": "Utility methods to make creating scaffolding commands with jake easier",
+    "homepage": "http://github.com/tstone/jake-scaffolder",
+    "keywords": ["jake", "scaffolding"],
+    "author": {
+        "name": "Titus",
+        "email": "wastingtape@gmail.com",
+        "url": "http://twitter.com/andstuff"
+    },
+    "licenses": [{
+        "type":"MIT",
+        "url":"http://github.com/tstone/jake-scaffolder/master/LICENSE"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/tstone/jake-scaffolder.git",
+        "web": "http://github.com/tstone/jake-scaffolder"
+    },
+    "main": "jake-scaffolder",
+    "engines": [ "node >= 0.6"]
+}
