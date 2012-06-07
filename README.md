@@ -38,7 +38,9 @@ var scaffold = require('jake-scaffolder').scaffold;
 desc('Create a new jQuery Plugin');
 task('newplugin', function(pluginName){
     scaffold(function(act, need, conf){
-                
+        // Context
+        conf.set('pluginName', pluginName);
+
         // Prereqs
         need.fileDoesntExist('./plugin/[pluginName.lower].jquery.js');
 
@@ -61,6 +63,8 @@ Cool. Now that we think about it, we should probably make sure the `/plugins/` d
 desc('Create a new jQuery Plugin');
 task('newplugin', function(pluginName){
     scaffold(function(act, need, conf){
+        // Context
+        conf.set('pluginName', pluginName);
                 
         // Prereqs
         need.dirExists('./plugins');
@@ -89,9 +93,8 @@ We can now update our task to generate a new version of that file when the task 
 desc('Create a new jQuery Plugin');
 task('newplugin', function(pluginName){
     var newPluginPath = './plugins/[pluginName.lower].jquery.js';
-    scaffold(function(act, need, conf){
-        
-        // Setup our context
+    scaffold(function(act, need, conf){        
+        // Context
         conf.set('pluginName', pluginName);
         
         // Prereqs
@@ -125,8 +128,7 @@ Our task gets updated with a few minor changes.
 desc('Create a new jQuery Plugin');
 task('newplugin', function(pluginName){
     scaffold(function(act, need, conf){
-        
-        // Setup our context
+        // Context
         conf.set('pluginName', pluginName);
         
         // Prereqs
