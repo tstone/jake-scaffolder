@@ -43,7 +43,6 @@ task('newplugin', function(pluginName){
 
         // Prereqs
         need.fileDoesntExist('./plugin/[pluginName.lower].jquery.js');
-
     });
 });
 ```
@@ -69,7 +68,6 @@ task('newplugin', function(pluginName){
         // Prereqs
         need.dirExists('./plugins');
         need.fileDoesntExist('./plugins/[pluginName.lower].jquery.js');
-
     });
 });
 ```
