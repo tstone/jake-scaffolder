@@ -129,6 +129,7 @@ task('newplugin', function(pluginName){
         
         // Prereqs
         need.dirExists('./plugins');
+        need.dirEmpty('./plugins/' + pluginName);
 
         // Generate
         act.mkdir('./plugins/' + pluginName)
