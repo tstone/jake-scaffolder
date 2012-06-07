@@ -46,7 +46,16 @@ task('newplugin', function(pluginName){
 });
 ```
 
-Cool.  Now that we think about it, we should probably make sure the `/plugins/` directory exists too, so our scaffolding script doesn't barf all over itself if we later rename that folder.
+If we were to run the task right now, and the file existed, we'd get an error on the console:
+
+```
+$ jake newplugin[example]
+
+  =>  C:\Example\plugin\example.jquery.js already exists. Quitting.
+
+```
+
+Cool. Now that we think about it, we should probably make sure the `/plugins/` directory exists too, so our scaffolding script doesn't barf all over itself if we later rename that folder.
 
 ```
 desc('Create a new jQuery Plugin');
