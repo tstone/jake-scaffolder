@@ -139,3 +139,50 @@ task('newplugin', function(pluginName){
 ```
 
 And that's what jake-scaffold does.  There are a lot more tricks it has up it's sleeve.  Check out the (future) wiki for more details.
+
+## Need
+
+The following methods are supported.
+
+```
+need.exists(file)           // The file or directory must exist to continue
+need.fileExists(file)       // Same as .exists, but a clearer name
+need.dirExists(dir)         // Same as .exists, but a clearer name
+need.doesntExist            // The file or directory must not exist to continue
+need.fileDoesntExist        // Same as .doesntExist, but a clearer name
+need.dirDoesntExist         // Same as .doesntExist, but a clearer name
+need.dirEmpty               // The directory must have no files in it to continue
+need.dirNotEmpty            // The directory must have at least one file in it to continue
+```
+
+## Act
+
+The following actions are supported.
+
+```
+act.mkdir(dir)                                  // Create the specified directory
+act.createFile(content, dest)                   // Create a new file, with the given content
+act.createEmptyFile(dest)                       // Create a new, blank file
+act.renderStringToFile(str, dest)               // Render the string and save it to a new file
+act.renderFile(source, dest)                    // Render a template file (source)
+act.renderFolder(source, dest)                  // Render every file in the dir to the destination dir
+act.replaceInFile(source, find, repl, options)  // Replace the "find" within the source with "repl"
+act.replaceInDir(source, find, repl, options)   // Replace the "find" within the source with "repl" for every file in the source dir
+```
+
+## Conf
+
+Any arbitrary value can be added to conf.  The values on conf will be available when rendering.
+
+```
+conf.get(key)               // Return the current value of key
+conf.set(key, val)          // Set the value of key to val
+```
+
+In addition, there are some special conf values that do things.
+
+```
+templateDir                 // The default location for templates when rendering a file/folder
+startTag                    // The start of the replace tag.  Default:  \\[
+endTag                      // The end of the replace tag.  Default:  \\]
+```
